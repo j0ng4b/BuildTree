@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="BuildTree" />
+		<Option makefile_is_custom="1" />
+		<Option execution_dir="../game" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="RELEASE">
+				<Option output="BuildTree" prefix_auto="1" extension_auto="1" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option use_console_runner="0" />
+				<MakeCommands>
+					<Build command="$make -f $makefile GAME_BUILD_MODE=$target" />
+					<CompileFile command="$make -f $makefile $file GAME_BUILD_MODE=$target" />
+					<Clean command="$make -f $makefile clean" />
+					<DistClean command="$make -f $makefile distclean$target" />
+					<AskRebuildNeeded command="$make -q -f $makefile GAME_BUILD_MODE=$target" />
+					<SilentBuild command="$make -f $makefile GAME_BUILD_MODE=$target &gt; $(CMD_NULL)" />
+				</MakeCommands>
+			</Target>
+			<Target title="DEBUG">
+				<Option output="BuildTree" prefix_auto="1" extension_auto="1" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option use_console_runner="0" />
+				<MakeCommands>
+					<Build command="$make -f $makefile GAME_BUILD_MODE=$target" />
+					<CompileFile command="$make -f $makefile $file" />
+					<Clean command="$make -f $makefile clean" />
+					<DistClean command="$make -f $makefile distclean$target" />
+					<AskRebuildNeeded command="$make -q -f $makefile GAME_BUILD_MODE=$target" />
+					<SilentBuild command="$make -f $makefile GAME_BUILD_MODE=$target &gt; $(CMD_NULL)" />
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Extensions>
+			<editor_config active="1" use_tabs="0" tab_indents="1" tab_width="4" indent="4" eol_mode="2" />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
